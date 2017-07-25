@@ -2,10 +2,10 @@
 function reverseString(str) {
   
   // Normal Method //
-  /*var splitted = str.split("");
+  var splitted = str.split("");
   var result = splitted.reverse().join("");
   
-  return result;*/
+  return result;
   
   //Really Long Method//
  var final = "";
