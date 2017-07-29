@@ -1,0 +1,40 @@
+*{
+  margin:0;
+  padding:0;
+}
+
+body{
+  .overall{
+    text-align: center;
+    margin: 20px 20% 0 20%;
+    background-color: lightblue;
+    padding-bottom: 5%;
+    .timer{
+      margin-top: 30px;
+      
+    }
+    #time {
+      text-align: center;
+      background-color: pink;
+      width: 400px;
+      margin: 0 25% 5% 25%;
+      height: auto;
+      line-height: 40px;
+      
+    }
+    
+    a {
+      background-color: lightgray;
+      margin-right: 20px;
+      line-height: 40px;
+      
+      padding: 1% 5% 1% 5%;
+      height: auto;
+      
+      
+    }
+  }
+ 
+}
+
+ 
