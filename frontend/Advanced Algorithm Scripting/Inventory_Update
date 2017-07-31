@@ -1,0 +1,46 @@
+
+function updateInventory(arr1, arr2) {
+    // Step 1 : Remove the Overlaps
+    
+    //We first Map the items represented in arr2 to a new array called items. 
+    var items = arr2.map(function(items){
+      return items[1];
+    })
+    
+    //We then check if any of the items are also present in arr1 by looping through arr1
+    items.forEach(function(item){
+      for(var i = 0; i < arr1.length ; i++){
+        if(arr1[i][1] === item){
+          
+          //Once a match has been found, we then search for the same item in arr2 and update the value in arr2
+          arr2.forEach(function(match){
+            if(match[1] === item){
+              match[0] += arr1[i][0];
+            }
+          })
+          //We then remove the item at position i using slice, modifying the original array
+          arr1.splice(i,1);
+          
+        }
+      }
+    })
+    
+    //We then join the two arrays together to get our final array. At this point, we also sort it by comparing the respective items.
+    var sorted = arr1.concat(arr2).sort(function(currItem, nextItem) {
+
+    //Ternary function to avoid using if else
+    return currItem[1] > nextItem[1] ? 1 : -1;
+  });
+    
+    return sorted;
+  
+}
+  
+
+//Sample function call.
+updateInventory([[21, "Bowling Ball"], [2, "Dirty Sock"], [1, "Hair Pin"], [5, "Microphone"]],
+ [[2, "Hair Pin"], [3, "Half-Eaten Apple"], [67, "Bowling Ball"], [7, "Toothpaste"]])
+ 
+ //Sample Result
+ [[88, "Bowling Ball"], [2, "Dirty Sock"], [3, "Hair Pin"], [3, "Half-Eaten Apple"], [5, "Microphone"], [7, "Toothpaste"]].
+ 
